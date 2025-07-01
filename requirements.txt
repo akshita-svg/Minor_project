@@ -4,3 +4,6 @@ numpy
 matplotlib
 seaborn
 scikit-learn
+bokeh
+altair
+plotly
