@@ -147,16 +147,18 @@ species_counts.plot(kind='bar')
 plt.xlabel('Species')
 plt.ylabel('Count')
 plt.title('Penguin Species Counts')
-plt.show()
+st.pyplot(fig)
 
 #Plot the flipper lengths of penguin species.
 import seaborn as sns
 sns.barplot(x ="species", y="flipper_length_mm", data=df)
 plt.title("Flipper Length for 3 Penguin Species", size=20, color="red")
+st.pyplot(fig)
 
 # Plot the flipper lengths of penguin species by sex.
 sns.barplot(x = "species", y = "flipper_length_mm", data =df, hue = "sex")
 plt.title("Flipper Length for 3 Penguin Species by Sex", size=20, color="red")
+st.pyplot(fig)
 
 """# **HISTOGRAM**
 
@@ -173,15 +175,17 @@ plt.hist(df['body_mass_g'],bins=10)
 plt.xlabel('Body Mass (g)')
 plt.ylabel('Frequency')
 plt.title('Distribution of Penguin Body Mass')
-plt.show()
+st.pyplot(fig)
 
 # Plot a histogram of flipper length.
 sns.histplot(x ="flipper_length_mm", data=df)
 plt.title("Flipper Length", size=20)
+st.pyplot(fig)
 
 # Flipping the above  graph with the y argument.
 sns.histplot(y = "flipper_length_mm", data = df)
 plt.title("Flipper Length", size=20)
+st.pyplot(fig)
 
 """# **SCATTER PLOT**
 
@@ -192,10 +196,12 @@ plt.title("Flipper Length", size=20)
 
 # Draw a scatter plot of culmen length vs flipper length, colored by species.
 sns.scatterplot(data=df,x='culmen_length_mm',y='flipper_length_mm',hue='species')
+st.pyplot(fig)
 
 # Draw a scatter plot of culmen length vs culmen depth, colored by species.
 sns.scatterplot(x="culmen_length_mm", y="culmen_depth_mm", data=df, hue="species")
 plt.title("Culmenl Length vs Culmen Depth", size=20)
+st.pyplot(fig)
 
 """# **BOXPLOT**
 
@@ -208,15 +214,16 @@ plt.title("Culmenl Length vs Culmen Depth", size=20)
 
 # Create a boxplot comparing body mass across species.
 sns.boxplot(data=df,x='species',y='body_mass_g')
-
+st.pyplot(fig)
 # Create a boxplot comparing flipper length for three penguin across species.
 sns.boxplot(x = "species", y = "flipper_length_mm", data =df)
 plt.title("Flipper Length for 3 Penguin Species", size=20)
+st.pyplot(fig)
 
 # Create a boxplot comparing flipper length for three penguin species by sex across species.
 sns.boxplot(x = "species", y = "flipper_length_mm", data =df, hue = "sex")
 plt.title("Flipper Length for 3 Penguin Species by Sex", size=20)
-
+st.pyplot(fig)
 """# **PIE CHART**
 
 > A Pie Chart is a circular statistical plot that can display only one series of data. The area of the chart is the total percentage of the given data.
@@ -228,7 +235,7 @@ plt.title("Flipper Length for 3 Penguin Species by Sex", size=20)
 species_proportion=df['species'].value_counts(normalize=True)
 plt.pie(species_proportion,labels=species_proportion.index,autopct='%1.2f%%')
 plt.title('Proportion of Each Species')
-plt.show()
+st.pyplot(fig)
 
 """# **VIOLIN PLOT**
 
@@ -243,11 +250,12 @@ plt.show()
 # Compare flipper length and species by violin graph.
 sns.violinplot(x = "species", y = "flipper_length_mm", data = df)
 plt.title("Flipper Length for 3 Penguin Species", size=20, color="red")
+st.pyplot(fig)
 
 # Compare flipper length foe penguin species by sex and species by violin graph.
 sns.violinplot(x = "species", y = "flipper_length_mm", data = df, hue = "sex")
 plt.title("Flipper Length for 3 Penguin Species by Sex", size=20, color="red")
-
+st.pyplot(fig)
 """# **PAIRPLOT**
 
 > Pairplot method to see the pair relations of the variables. This function creates cross-plots of each numeric variable in the dataset.
@@ -257,9 +265,11 @@ plt.title("Flipper Length for 3 Penguin Species by Sex", size=20, color="red")
 
 # Visually separate the three penguin species using all main physical measurements(culmen length,culmen depth,flipper length,body mass).
 sns.pairplot(df, hue = "species", height=3)
+st.pyplot(fig)
 
 # Are there strong pairwise correlations among the main physical measurements and do these correlations differ by species?
 sns.pairplot(df, hue = "species", height=3, diag_kind="hist")
+st.pyplot(fig)
 
 """# **HEATMAP**
 
@@ -275,7 +285,7 @@ correlation
 corr=df[['flipper_length_mm','body_mass_g']].corr()
 sns.heatmap(corr,annot=True)
 plt.title('Correlation matrix')
-plt.show()
+st.pyplot(fig)
 
 """# **CONCLUSION:**
 
