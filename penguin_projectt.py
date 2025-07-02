@@ -16,7 +16,7 @@ Original file is located at
 
 import pandas as pd
 df=pd.read_csv('penguins_size.csv')
-df
+
 
 """---
 
